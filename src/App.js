@@ -110,6 +110,10 @@ function Cart(){
   var total=0;
   cart.map((val,index)=>{
     total+=val.amount
+    return(
+      <>
+      </>
+    )
   })
   if(cart.length>0) {
     return(
