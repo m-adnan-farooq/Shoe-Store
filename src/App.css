@@ -101,3 +101,21 @@ table{
   margin-top: -22px;
   /* background-image: linear-gradient(to right, #66FCF1, white) */
 }
+
+#quantity{
+  border: 1px solid lightgrey;
+  height: 30px;
+  width: 200px;
+}
+
+.btn{
+  background-color: #F13C20;
+  color: #4056A1;
+  width: 100px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  font-weight: 600;
+}

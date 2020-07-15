@@ -61,7 +61,7 @@ function LaunchIndex() {
         {Object.entries(shoes).map(([slug, { name, img, price }]) => (
           <li className="list" key={slug}>
             <Link style={{textDecoration:"none", color:"#F13C20"}} to={`/product/${slug}`}>
-              <h4 className="name">{name}</h4>
+              <h2 className="name">{name}</h2>
               <img className='img' src={img} alt={name} />
               <h3>Price: <NumberFormat value={price} displayType={'text'} thousandSeparator={true} prefix={'PKR '} /></h3>
             </Link>
@@ -94,14 +94,19 @@ function LaunchShoe() {
       </div>
       <h3 id="price">Price: <NumberFormat value={price} displayType={'text'} thousandSeparator={true} prefix={'PKR '} /></h3>
       <input id="quantity" type="number" placeholder="Enter quantity"></input>
-      <button onClick={addToCart}>Add to cart</button>
+      <button className = 'btn' onClick={addToCart}>Add to cart</button>
     </div>
   )
   
   function addToCart() {
     var quantity = document.getElementById("quantity");
+    if (quantity.value <1){
+      alert('Please Enter a Valid Quantity')
+    }
+    else{
     var cartDetails = {"name":name, "image":img, "quantity":quantity.value, "rate":price, "amount":quantity.value*price}
     cart.push(cartDetails)
+    }
   }
 
 }
@@ -118,7 +123,7 @@ function Cart(){
   })
   if(cart.length>0) {
     return(
-      <div style={{color: '#F13C20', backgroundColor:"rgba(236, 236, 236,0.45)", margin:'-20px 0px 0px 0px'}}>
+      <div style={{color: '#F13C20', backgroundColor:"rgba(236, 236, 236,0.45)", margin:'-20px 0px 0px 0px', height: '90vh'}}>
       <h1 style={{textAlign:"center"}}>My Cart</h1>
       <div className="cartHeadings">
         <h3>Product</h3>
