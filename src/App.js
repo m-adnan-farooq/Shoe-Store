@@ -112,12 +112,13 @@ function Cart(){
     total+=val.amount
     return(
       <>
+      {console.log(total)}
       </>
     )
   })
   if(cart.length>0) {
     return(
-      <div style={{color: '#F13C20', backgroundColor:"rgba(236, 236, 236,0.45)", margin:'-2px 0px 0px 0px'}}>
+      <div style={{color: '#F13C20', backgroundColor:"rgba(236, 236, 236,0.45)", margin:'-20px 0px 0px 0px'}}>
       <h1 style={{textAlign:"center"}}>My Cart</h1>
       <div className="cartHeadings">
         <h3>Product</h3>
@@ -127,7 +128,7 @@ function Cart(){
       </div>
       {cart.map((val, index)=>{
         return(
-            <div className="cartItems">
+            <div className="cartItems" key={index}>
             {/* <li><img style={{width:"100px"}} src={val.image} alt={val.name}></img></li> */}
             <li className="cartItems-Name">{val.name}</li>
             <li>{val.quantity}</li>
